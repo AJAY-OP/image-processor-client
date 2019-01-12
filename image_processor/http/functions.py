@@ -1,5 +1,7 @@
 from abc import ABC, abstractmethod
 
+from image_processor.http.route import Route
+
 
 class ImageFunctions(ABC):
 
@@ -16,6 +18,6 @@ class ImageFunctions(ABC):
             "text": text,
             "avatar_url": avatar_url
         }
-        route = self.route("rip_meme")
+        route = self.route("rip_meme/")
         response = await self.request(route, json=payload)
         return response
