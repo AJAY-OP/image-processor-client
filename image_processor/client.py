@@ -1,7 +1,12 @@
 from .http import HttpImageClient
+from .image_methods import ImageMethods
 
 
-class Client(object):
+class Client(ImageMethods):
 
     def __init__(self, connection_uri: str = None, loop=None):
-        self.http = HttpImageClient(uri=connection_uri, loop=loop)
+        self._http = HttpImageClient(uri=connection_uri, loop=loop)
+
+    @property
+    def http(self):
+        return self._http
