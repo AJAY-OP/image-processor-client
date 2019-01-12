@@ -12,5 +12,4 @@ class MemesMethods(ABC):
 
     async def rip_meme(self, text: str, avatar_url: str) -> bytes:
         response = await self.http.rip_meme(text, avatar_url)
-        meme_bytes = await response.read()
-        return meme_bytes
+        return await response.read()

@@ -18,6 +18,6 @@ class ImageFunctions(ABC):
             "text": text,
             "avatar_url": avatar_url
         }
-        route = self.route("rip_meme/")
+        route = self.route("/rip_meme/")
         response = await self.request(route, json=payload)
         return response
