@@ -22,10 +22,15 @@ class HttpImageClient(ImageFunctions):
     def route(self, path, method: str = "POST", **params):
         return self._route(path, method, **params)
 
-    async def request(self, route: Route, **kwargs):
+    async def request(self, route: Route, read=True, **kwargs):
         method = route.method
         url = route.url
         async with self.session.request(method, url, **kwargs) as response:
             if response.status == 400:
                 raise InvalidFormat
-            return response
+            if read:
+                response.read_data = await response.read()
+                return response
+            else:
+                response.read_data = None
+                return response
