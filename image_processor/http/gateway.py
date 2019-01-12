@@ -1,5 +1,4 @@
 import asyncio
-
 import aiohttp
 
 from .route import Route
@@ -10,7 +9,7 @@ from .exceptions import InvalidFormat
 class HttpImageClient(ImageFunctions):
 
     def __init__(self, uri: str = None, loop=None):
-        self.session = None
+        self.session: aiohttp.ClientSession = None
         self.loop = loop or asyncio.get_event_loop()
         self.loop.run_until_complete(self.__get_http_session())
         Route.BASE_URL = uri or Route.BASE_URL
