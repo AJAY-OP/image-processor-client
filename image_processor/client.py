@@ -10,3 +10,6 @@ class Client(ImageMethods):
     @property
     def http(self):
         return self._http
+
+    async def close(self):
+        return await self.http.session.close()
