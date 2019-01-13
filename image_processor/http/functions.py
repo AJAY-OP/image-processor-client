@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 
-from image_processor.http.route import Route
+from .response import HttpResponseData
+from .route import Route
 
 
 class ImageFunctions(ABC):
@@ -10,7 +11,7 @@ class ImageFunctions(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    async def request(self, route: Route, **kwargs):
+    async def request(self, route: Route, **kwargs) -> HttpResponseData:
         raise NotImplementedError
 
     async def rip_meme(self, text: str, avatar_url: str):
@@ -19,5 +20,5 @@ class ImageFunctions(ABC):
             "avatar_url": avatar_url
         }
         route = self.route("/rip_meme/")
-        response = await self.request(route, json=payload)
-        return response
+        data = await self.request(route, json=payload)
+        return data

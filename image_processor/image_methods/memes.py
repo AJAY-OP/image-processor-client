@@ -11,6 +11,5 @@ class MemesMethods(ABC):
         raise NotImplementedError
 
     async def rip_meme(self, text: str, avatar_url: str) -> bytes:
-        response = await self.http.rip_meme(text, avatar_url)
-        meme_bytes = response.read_data
-        return meme_bytes
+        data = await self.http.rip_meme(text, avatar_url)
+        return data.read_data

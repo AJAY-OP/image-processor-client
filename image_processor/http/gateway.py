@@ -3,6 +3,7 @@ import aiohttp
 
 from .route import Route
 from .functions import ImageFunctions
+from .response import HttpResponseData
 from .exceptions import InvalidFormat
 
 
@@ -22,11 +23,11 @@ class HttpImageClient(ImageFunctions):
         method = route.method
         url = route.url
         async with self.session.request(method, url, **kwargs) as response:
-            if response.status == 400:
+            data = HttpResponseData(response)
+            if data.response.status == 400:
                 raise InvalidFormat
             if read:
-                response.read_data = await response.read()
-                return response
+                await data.read()
+                return data
             else:
-                response.read_data = None
-                return response
+                return data
