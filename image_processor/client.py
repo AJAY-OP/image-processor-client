@@ -1,11 +1,11 @@
-from ._http.gateway import HttpImageClient
-from .image_methods import ImageMethods
+from ._http import gateway
+from . import image_methods
 
 
-class Client(ImageMethods):
+class Client(image_methods.ImageMethods):
 
     def __init__(self, connection_uri: str = None, loop=None):
-        self._http = HttpImageClient(uri=connection_uri, loop=loop)
+        self._http = gateway.HttpImageClient(uri=connection_uri, loop=loop)
         super().__init__()
 
     @property
