@@ -10,8 +10,8 @@ python3 -m pip install -U git+https://github.com/thec0sm0s/image-processor-clien
 
 ### Basic Example
 ```python
-import image_processor
 import asyncio
+import image_processor
 
 client = image_processor.Client()
 
