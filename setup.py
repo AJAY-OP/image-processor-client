@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 requirements = [requirement for requirement in open("requirements.txt").read().splitlines()]
 
@@ -9,7 +9,7 @@ setup(
     author="□ | The Cosmos",
     description="Asynchronous python client for image-processor server (https://github.com/thec0sm0s/image-processor).",
     long_description=open("README.md").read(),
-    packages=['image_processor'],
+    packages=find_packages(),
     install_requires=requirements,
     classifiers=[
             'Development Status :: 2 - Alpha',
