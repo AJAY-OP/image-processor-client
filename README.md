@@ -1,5 +1,5 @@
 # image-processor-client
-Asynchronous image-processor python client for [image-processor] server built using Flask and PIL.
+Asynchronous image-processor python client for [image-processor] server.
 
 
 ### Installation
