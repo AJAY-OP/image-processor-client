@@ -4,7 +4,7 @@ requirements = [requirement for requirement in open("requirements.txt").read().s
 
 setup(
     name="image_processor",
-    version="0.0.0.3",
+    version="0.0.0.4",
     url="https://github.com/thec0sm0s/image-processor-client",
     author="□ | The Cosmos",
     description="Asynchronous python client for image-processor server (https://github.com/thec0sm0s/image-processor).",
