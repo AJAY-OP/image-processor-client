@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
-from image_processor.http.response import HttpResponseData
-from image_processor.http.route import Route
+from ..._http.response import HttpResponseData
+from ..._http.route import Route
 
 
 class ImageFunction(ABC):

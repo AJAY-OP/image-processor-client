@@ -1,4 +1,4 @@
-from image_processor.http import HttpImageClient
+from .._http.gateway import HttpImageClient
 
 
 class MemesMethods(object):

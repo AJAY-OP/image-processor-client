@@ -1,4 +1,4 @@
-from .http import HttpImageClient
+from ._http.gateway import HttpImageClient
 from .image_methods import ImageMethods
 
 
