@@ -6,6 +6,7 @@ class Client(ImageMethods):
 
     def __init__(self, connection_uri: str = None, loop=None):
         self._http = HttpImageClient(uri=connection_uri, loop=loop)
+        super().__init__()
 
     @property
     def http(self):
