@@ -1,6 +1,7 @@
 from abc import abstractmethod
 
 from .memes import MemesMethods
+from .discord import DiscordMethods
 
 
 class ImageMethods(object):
@@ -12,3 +13,4 @@ class ImageMethods(object):
 
     def __init__(self):
         self.memes = MemesMethods(self.http)
+        self.discord = DiscordMethods(self.http)
