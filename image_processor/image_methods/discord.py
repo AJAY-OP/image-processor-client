@@ -1,4 +1,4 @@
-from .._http.gateway import HttpImageClient
+from .._http import HttpImageClient
 
 
 class DiscordMethods(object):

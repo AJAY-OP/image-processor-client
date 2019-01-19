@@ -31,8 +31,8 @@ class ImageClientTest(unittest.TestCase):
     async def _get_rip_meme(self):
         client = Client()
         meme_bytes = await client.memes.rip(self.RIP_MEME_TEXT, self.RIP_MEME_AVATAR_URL)
-        with open("tests/images/rip_meme.png", "wb") as meme_file:
+        with open("images/rip_meme.png", "wb") as meme_file:
             meme_file.write(meme_bytes)
-        files = os.listdir("tests/images/")
+        files = os.listdir("images/")
         await client.close()
         self.assertIn("rip_meme.png", files)
