@@ -1,10 +1,18 @@
+import re
+
 from setuptools import setup, find_packages
+
+
+def __get_version():
+    with open("image_processor/__init__.py") as package_init_file:
+        return re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]', package_init_file.read(), re.MULTILINE).group(1)
+
 
 requirements = [requirement for requirement in open("requirements.txt").read().splitlines()]
 
 setup(
     name="image_processor",
-    version="0.0.0.4",
+    version=__get_version(),
     url="https://github.com/thec0sm0s/image-processor-client",
     author="□ | The Cosmos",
     description="Asynchronous python client for image-processor server (https://github.com/thec0sm0s/image-processor).",
