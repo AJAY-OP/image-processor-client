@@ -2,12 +2,49 @@ from .._http import HttpImageClient
 
 
 class DiscordMethods(object):
+    """Base class for available discord imaging methods."""
 
     def __init__(self, http: HttpImageClient):
         self.http = http
 
-    async def ss_message(self, name: str, message_content: str, avatar_url: str, name_color: tuple = None, time_stamp: str = None):
+    async def ss_message(
+            self,
+            name: str,
+            message_content: str,
+            avatar_url: str,
+            name_color: tuple = None,
+            time_stamp: str = None
+    ):
+        """|coro|
 
+        Requests server to process screenshot of a discord message using provided parameters and returns image\
+        :class: `bytes`.
+
+        Note
+        ----
+        For now it only supports text message content.
+
+        Parameters
+        ----------
+        name : :obj:, str
+            Name of discord User or Member who sent the message.
+        message_content : :obj:, `str`
+            Full clean message content
+        avatar_url : :obj:, `str`
+            Direct avatar URL of discord User or Member who sent the message.
+        name_color :obj:, `tuple` of :obj: `int`, optional
+            A tuple representing RGB color of discord User or Message who sent the message. It's default value\
+            is set to ``(255, 255, 255)``.
+        time_stamp : :obj:, `str`
+            String representing date and time stamp of epoch when message was sent. Uses ``Today at 11:38 AM``\
+            if not provided.
+
+        Returns
+        -------
+        bytes
+            Binary image bytes which appears as screenshot of a discord message.
+
+        """
         if name_color:
             name_color = list(name_color)
 
