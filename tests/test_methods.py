@@ -27,7 +27,7 @@ class DiscordMethodsTest(unittest.TestCase):
     async def _get_msg_ss(self):
         client = Client()
         ss_bytes = await client.discord.ss_message(**self.SAMPLE_SS_MSG_DATA)
-        with open("tests/images/msg_ss.png", "wb") as ss_file:
+        with open("images/msg_ss.png", "wb") as ss_file:
             ss_file.write(ss_bytes)
-        files = get_files("tests/images/")
+        files = get_files("images/")
         self.assertIn("msg_ss.png", files)
