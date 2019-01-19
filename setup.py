@@ -20,7 +20,7 @@ setup(
     packages=find_packages(),
     install_requires=requirements,
     classifiers=[
-            'Development Status :: 2 - Alpha',
+            'Development Status :: 2 - Beta',
             'License :: OSI Approved :: MIT License',
             'Intended Audience :: Developers',
             'Natural Language :: English',
