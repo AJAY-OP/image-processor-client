@@ -13,7 +13,7 @@ python3 -m pip install image-processor
 import asyncio
 import image_processor
 
-client = image_processor.Client('https://cosmos-image-processor.herokuapp.com/')
+client = image_processor.Client()
 
 loop = asyncio.get_event_loop()
 meme_bytes = loop.run_until_complete(client.memes.rip("Python", "https://i.imgur.com/U5QR5SY.png"))
