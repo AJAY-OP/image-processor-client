@@ -1,12 +1,9 @@
 import unittest
+from typing import Union
+
 from image_processor_client import Client
 
 import asyncio
-import os
-
-
-def get_files(path):
-    return os.listdir(path)
 
 
 class DiscordMethodsTest(unittest.TestCase):
@@ -27,7 +24,4 @@ class DiscordMethodsTest(unittest.TestCase):
     async def _get_msg_ss(self):
         client = Client()
         ss_bytes = await client.discord.ss_message(**self.SAMPLE_SS_MSG_DATA)
-        with open("images/msg_ss.png", "wb") as ss_file:
-            ss_file.write(ss_bytes)
-        files = get_files("images/")
-        self.assertIn("msg_ss.png", files)
+        self.assertIsInstance(ss_bytes, Union[bytes])
