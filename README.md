@@ -11,7 +11,7 @@ python3 -m pip install image-processor
 ### Basic Example
 ```python
 import asyncio
-import image_processor
+import image_processor_client
 
 client = image_processor.Client()
 
