@@ -11,7 +11,7 @@ def __get_version():
 requirements = [requirement for requirement in open("requirements.txt").read().splitlines()]
 
 setup(
-    name="image_processor_client",
+    name="img_processor_client",
     version=__get_version(),
     url="https://github.com/thec0sm0s/image-processor-client",
     author="□ | The Cosmos",

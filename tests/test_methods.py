@@ -1,5 +1,5 @@
 import unittest
-from image_processor import Client
+from image_processor_client import Client
 
 import asyncio
 import os

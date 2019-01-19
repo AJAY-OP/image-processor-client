@@ -2,7 +2,7 @@ import os
 import asyncio
 import unittest
 
-from image_processor import Client
+from image_processor_client import Client
 
 
 class ImageClientTest(unittest.TestCase):
