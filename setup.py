@@ -20,14 +20,15 @@ setup(
     packages=find_packages(),
     install_requires=requirements,
     classifiers=[
-            'Development Status :: 2 - Beta',
+            'Development Status :: 4 - Beta',
             'License :: OSI Approved :: MIT License',
             'Intended Audience :: Developers',
             'Natural Language :: English',
             'Operating System :: OS Independent',
             'Programming Language :: Python :: 3.6',
             'Programming Language :: Python :: 3.7',
-            'Topic :: Image',
-            'Topic :: Tools',
+            'Topic :: Software Development :: Libraries',
+            'Topic :: Internet',
+            'Topic :: Utilities',
     ]
 )

@@ -5,7 +5,7 @@ Asynchronous image-processor python client for [image-processor] API server.
 ### Installation
 To install image processor client library, you can use following command:
 ```sh
-python3 -m pip install -U git+https://github.com/thec0sm0s/image-processor-client
+python3 -m pip install image-processor
 ```
 
 ### Basic Example
