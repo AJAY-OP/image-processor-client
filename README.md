@@ -26,7 +26,7 @@ with open("rip_meme.png", "wb") as meme_file:
 
 
 ### Requiremets
-* Python 3+
+* Python 3.6+
 * `aiohttp`
 * [image-processor] API Server (if self-hosted)
 
