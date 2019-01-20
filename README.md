@@ -32,7 +32,7 @@ with open("rip_meme.png", "wb") as meme_file:
 
 
 ### Documentation
-For all of the available methods and ful API reference, check our [documentaion]. 
+For all of the available methods and full API reference, check our [documentaion]. 
 
 [image-processor]: https://github.com/thec0sm0s/image-processor
 [documentaion]: https://image-processor-client.readthedocs.io/en/latest/
