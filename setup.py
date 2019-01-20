@@ -9,7 +9,9 @@ def __get_version():
         return re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]', package_init_file.read(), re.MULTILINE).group(1)
 
 
-requirements = [requirement for requirement in open("requirements.txt").read().splitlines()]
+requirements = [
+    "aiohttp"
+]
 
 on_rtd = os.getenv('READTHEDOCS') == 'True'
 if on_rtd:
