@@ -13,7 +13,7 @@ implementing all of the features and methods provided by it.
 
 **Features**
 
-- Non-blocking asynchronous wrapper
+- Non-blocking asynchronous wrapper.
 - Better object oriented approach.
 - Implements entire methods provided by API.
 - Clear categorisation of image methods into different objects.
