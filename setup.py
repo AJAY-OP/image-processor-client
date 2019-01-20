@@ -10,6 +10,12 @@ def __get_version():
 
 requirements = [requirement for requirement in open("requirements.txt").read().splitlines()]
 
+extra_requirements = {
+    'docs': [
+        'sphinx==1.8.3'
+    ]
+}
+
 setup(
     name="image_processor_client",
     version=__get_version(),
@@ -19,6 +25,7 @@ setup(
     long_description=open("README.md").read(),
     packages=find_packages(),
     install_requires=requirements,
+    extras_require=extra_requirements,
     classifiers=[
             'Development Status :: 4 - Beta',
             'License :: OSI Approved :: MIT License',
