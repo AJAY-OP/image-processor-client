@@ -11,10 +11,13 @@
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-#
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
+
+import os
+import sys
+import re
+sys.path.insert(0, os.path.abspath('..'))
+sys.path.append('../image_processor_client/')
+
 
 
 # -- Project information -----------------------------------------------------
@@ -23,10 +26,12 @@ project = 'Image Processor Client'
 copyright = '2019, □ | The Cosmos'
 author = '□ | The Cosmos'
 
+with open('../image_processor_client/__init__.py') as f:
+    ver = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]', f.read(), re.MULTILINE).group(1)
 # The short X.Y version
-version = ''
+version = ver
 # The full version, including alpha/beta/rc tags
-release = ''
+release = ver
 
 
 # -- General configuration ---------------------------------------------------
@@ -46,6 +51,7 @@ extensions = [
     'sphinx.ext.coverage',
     'sphinx.ext.viewcode',
     'sphinx.ext.githubpages',
+    'sphinx.ext.napoleon',
 ]
 
 # Add any paths that contain templates here, relative to this directory.

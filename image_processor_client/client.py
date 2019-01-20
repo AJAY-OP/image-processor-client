@@ -4,23 +4,23 @@ from .image_methods import ImageMethods
 
 class Client(ImageMethods):
     """Main client class for end users\
-    establishing connection to _Image Processor API  Server: https://github.com/thec0sm0s/image-processor providing\
+    establishing connection to `Image Processor <https://github.com/thec0sm0s/image-processor/>`_ API Server providing\
     all of the categorised Image Methods.
 
     Parameters
     ----------
-    connection_url : :obj:, `str`, optional
+    connection_url : str, optional
         Base URL to running Image Processor API server. If not specified, attempts to connect to local Image Processor\
         API or developer's server if available.
-    loop : :obj: event loop, optional
-        The `event loop`_ to use for asynchronous operations. Uses ``asyncio.get_event_loop()`` if not specified.
+    loop : :obj: `event_loop`, optional
+        The event loop to use for asynchronous operations. Uses ``asyncio.get_event_loop()`` if not specified.
 
     Attributes
     ----------
-    memes : :obj: `MemesMethods`
-        An instance of `MemesMethods` class providing all of the available methods for memes category.
-    discord : :obj: `DiscordMethods`
-        An instance of `DiscordMethods` class providing all of the available methods for discord category.
+    memes : image_processor_client.image_methods.MemesMethods
+        An instance of ``MemesMethods`` class providing all of the available methods for memes category.
+    discord : image_processor_client.image_methods.DiscordMethods
+        An instance of ``DiscordMethods`` class providing all of the available methods for discord category.
 
     """
 

@@ -15,10 +15,8 @@ class DiscordMethods(object):
             name_color: tuple = None,
             time_stamp: str = None
     ):
-        """|coro|
-
-        Requests server to process screenshot of a discord message using provided parameters and returns image\
-        :class: `bytes`.
+        """Requests server to process screenshot of a discord message using provided parameters and returns image\
+        bytes.
 
         Note
         ----
@@ -26,16 +24,16 @@ class DiscordMethods(object):
 
         Parameters
         ----------
-        name : :obj:, str
+        name : str
             Name of discord User or Member who sent the message.
-        message_content : :obj:, `str`
+        message_content : str
             Full clean message content
-        avatar_url : :obj:, `str`
+        avatar_url : str
             Direct avatar URL of discord User or Member who sent the message.
-        name_color :obj:, `tuple` of :obj: `int`, optional
+        name_color : tuple, optional
             A tuple representing RGB color of discord User or Message who sent the message. It's default value\
             is set to ``(255, 255, 255)``.
-        time_stamp : :obj:, `str`
+        time_stamp : str, optional
             String representing date and time stamp of epoch when message was sent. Uses ``Today at 11:38 AM``\
             if not provided.
 

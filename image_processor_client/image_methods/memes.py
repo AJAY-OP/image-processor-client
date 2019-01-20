@@ -8,16 +8,14 @@ class MemesMethods(object):
         self.http = http
 
     async def rip(self, text: str, avatar_url: str) -> bytes:
-        """|coro|
-
-        Requests server to process RIP meme using provided parameters and returns image\
-        :class: `bytes`.
+        """Requests server to process RIP meme using provided parameters and returns image\
+        bytes.
 
         Parameters
         ----------
-        text : :obj:, `str`
+        text : str
             The text to write below avatar of RIP person.
-        avatar_url: :obj:, `str`
+        avatar_url: str
             Direct link to avatar to be shown in RIP Meme.
 
         Returns
