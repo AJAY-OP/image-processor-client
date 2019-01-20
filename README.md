@@ -11,9 +11,9 @@ python3 -m pip install image-processor-client
 ### Basic Example
 ```python
 import asyncio
-import image_processor_client
+from image_processor_client import Client
 
-client = image_processor.Client()
+client = Client()
 
 loop = asyncio.get_event_loop()
 meme_bytes = loop.run_until_complete(client.memes.rip("Python", "https://i.imgur.com/U5QR5SY.png"))
