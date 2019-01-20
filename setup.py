@@ -10,6 +10,10 @@ def __get_version():
 
 requirements = [requirement for requirement in open("requirements.txt").read().splitlines()]
 
+on_rtd = os.getenv('READTHEDOCS') == 'True'
+if on_rtd:
+    requirements.append('sphinxcontrib-napoleon')
+
 extra_requirements = {
     'docs': [
         'sphinx==1.8.3'
