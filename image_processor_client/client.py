@@ -17,7 +17,7 @@ class Client(ImageMethods):
 
     Attributes
     ----------
-    memes : :class: image_processor_client.image_methods.MemesMethods
+    memes : image_processor_client.image_methods.MemesMethods
         An instance of ``MemesMethods`` class providing all of the available methods for memes category.
     discord : image_processor_client.image_methods.DiscordMethods
         An instance of ``DiscordMethods`` class providing all of the available methods for discord category.
