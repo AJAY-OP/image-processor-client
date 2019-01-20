@@ -1,0 +1,241 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>API Reference &#8212; Image Processor Client 0.0.0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="api-reference">
+<h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h1>
+<p>The following section states all of the classes and methods directly
+available to end users.</p>
+<div class="section" id="client">
+<h2>Client<a class="headerlink" href="#client" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="image_processor_client.Client">
+<em class="property">class </em><code class="descclassname">image_processor_client.</code><code class="descname">Client</code><a class="reference internal" href="_modules/image_processor_client/client.html#Client"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#image_processor_client.Client" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main client class for end users    establishing connection to <a class="reference external" href="https://github.com/thec0sm0s/image-processor/">Image Processor</a> API Server providing    all of the categorised Image Methods.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>connection_url</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><em>, </em><em>optional</em>) – Base URL to running Image Processor API server. If not specified, attempts to connect to local Image Processor        API or developer’s server if available.</li>
+<li><strong>loop</strong> – The event loop to use for asynchronous operations. Uses <code class="docutils literal notranslate"><span class="pre">asyncio.get_event_loop()</span></code> if not specified.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="image_processor_client.Client.memes">
+<code class="descname">memes</code><a class="headerlink" href="#image_processor_client.Client.memes" title="Permalink to this definition">¶</a></dt>
+<dd><p>An instance of <code class="docutils literal notranslate"><span class="pre">MemesMethods</span></code> class providing all of the available methods for memes category.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><a class="reference internal" href="#image_processor_client.image_methods.MemesMethods" title="image_processor_client.image_methods.MemesMethods">image_processor_client.image_methods.MemesMethods</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="image_processor_client.Client.discord">
+<code class="descname">discord</code><a class="headerlink" href="#image_processor_client.Client.discord" title="Permalink to this definition">¶</a></dt>
+<dd><p>An instance of <code class="docutils literal notranslate"><span class="pre">DiscordMethods</span></code> class providing all of the available methods for discord category.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><a class="reference internal" href="#image_processor_client.image_methods.DiscordMethods" title="image_processor_client.image_methods.DiscordMethods">image_processor_client.image_methods.DiscordMethods</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="image_processor_client.Client.close">
+<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/image_processor_client/client.html#Client.close"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#image_processor_client.Client.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Closes running aiohttp session and performs basic cleanup.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="image-methods">
+<h2>Image Methods<a class="headerlink" href="#image-methods" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="image_processor_client.image_methods.MemesMethods">
+<em class="property">class </em><code class="descclassname">image_processor_client.image_methods.</code><code class="descname">MemesMethods</code><a class="reference internal" href="_modules/image_processor_client/image_methods/memes.html#MemesMethods"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#image_processor_client.image_methods.MemesMethods" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class for available memes processing methods.</p>
+<dl class="method">
+<dt id="image_processor_client.image_methods.MemesMethods.rip">
+<code class="descname">rip</code><span class="sig-paren">(</span><em>text: str</em>, <em>avatar_url: str</em><span class="sig-paren">)</span> &#x2192; bytes<a class="reference internal" href="_modules/image_processor_client/image_methods/memes.html#MemesMethods.rip"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#image_processor_client.image_methods.MemesMethods.rip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Requests server to process RIP meme using provided parameters and returns image        bytes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>text</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – The text to write below avatar of RIP person.</li>
+<li><strong>avatar_url</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – Direct link to avatar to be shown in RIP Meme.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Binary image bytes.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.7)">bytes</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="image_processor_client.image_methods.DiscordMethods">
+<em class="property">class </em><code class="descclassname">image_processor_client.image_methods.</code><code class="descname">DiscordMethods</code><a class="reference internal" href="_modules/image_processor_client/image_methods/discord.html#DiscordMethods"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#image_processor_client.image_methods.DiscordMethods" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class for available discord imaging methods.</p>
+<dl class="method">
+<dt id="image_processor_client.image_methods.DiscordMethods.ss_message">
+<code class="descname">ss_message</code><span class="sig-paren">(</span><em>name: str</em>, <em>message_content: str</em>, <em>avatar_url: str</em>, <em>name_color: tuple = None</em>, <em>time_stamp: str = None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/image_processor_client/image_methods/discord.html#DiscordMethods.ss_message"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#image_processor_client.image_methods.DiscordMethods.ss_message" title="Permalink to this definition">¶</a></dt>
+<dd><p>Requests server to process screenshot of a discord message using provided parameters and returns image        bytes.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For now it only supports text message content.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – Name of discord User or Member who sent the message.</li>
+<li><strong>message_content</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – Full clean message content</li>
+<li><strong>avatar_url</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – Direct avatar URL of discord User or Member who sent the message.</li>
+<li><strong>name_color</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.7)"><em>tuple</em></a><em>, </em><em>optional</em>) – A tuple representing RGB color of discord User or Message who sent the message. It’s default value            is set to <code class="docutils literal notranslate"><span class="pre">(255,</span> <span class="pre">255,</span> <span class="pre">255)</span></code>.</li>
+<li><strong>time_stamp</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><em>, </em><em>optional</em>) – String representing date and time stamp of epoch when message was sent. Uses <code class="docutils literal notranslate"><span class="pre">Today</span> <span class="pre">at</span> <span class="pre">11:38</span> <span class="pre">AM</span></code>            if not provided.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Binary image bytes which appears as screenshot of a discord message.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.7)">bytes</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Image Processor Client</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#client">Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#image-methods">Image Methods</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="introduction.html" title="previous chapter">Introduction</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, □ | The Cosmos.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/api.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
