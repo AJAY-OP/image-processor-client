@@ -16,4 +16,3 @@ steps:
       externalFeeds: 'pypi_connection'
   - script: 'python3 setup.py sdist'
   - script: 'twine upload -r distributions --config-file $(PYPIRC_PATH) --skip-existing dist/*'
-  - script: 'twine upload -r pypi_connection dist/*'
