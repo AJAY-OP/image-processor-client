@@ -14,5 +14,5 @@ steps:
     inputs:
       artifactFeeds: 'client-setup-builds'
       externalFeeds: 'pypi-connection'
-  - script: 'python3 setup.py bdist_wheel'
+  - script: 'python3 setup.py sdist'
   - script: 'twine upload -r client-setup-builds --config-file $(PYPIRC_PATH) dist/*'
