@@ -1,4 +1,6 @@
 # image-processor-client
+[![Build Status](https://thecosmos.visualstudio.com/image-processor-client/_apis/build/status/image-processor-client?branchName=master)](https://thecosmos.visualstudio.com/image-processor-client/_build/latest?definitionId=8?branchName=master)
+
 Asynchronous image-processor python client for [image-processor] API server.
 
 
