@@ -13,4 +13,4 @@ steps:
   - task: TwineAuthenticate@0
     inputs:
       artifactFeeds: 'client-setup-builds'
-  - script: 'twine -r "client-setup-builds" --config-file $(PYPIRC_PATH) dist/*'
+  - script: 'twine -r {client-setup-builds} --config-file $(PYPIRC_PATH) dist/*'
