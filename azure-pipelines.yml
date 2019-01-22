@@ -13,7 +13,7 @@ steps:
   - task: TwineAuthenticate@0
     inputs:
       artifactFeeds: 'client-setup-builds'
-      externalFeeds: 'pypi-connection'
+      externalFeeds: 'pypi_connection'
   - script: 'python3 setup.py sdist'
-  - script: 'twine upload -r pypi-connection dist/*'
+  - script: 'twine upload -r pypi_connection --config-file $(PYPIRC_PATH) dist/*'
   - script: 'twine upload -r client-setup-builds --config-file $(PYPIRC_PATH) dist/*'
