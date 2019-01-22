@@ -13,4 +13,5 @@ steps:
   - task: TwineAuthenticate@0
     inputs:
       artifactFeeds: 'client-setup-builds'
+  - script: 'python3 setup.py sdist'
   - script: 'twine upload -r client-setup-builds --config-file $(PYPIRC_PATH) dist/*'
