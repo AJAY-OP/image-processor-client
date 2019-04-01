@@ -6,12 +6,22 @@ from image_processor_client import Client
 import asyncio
 
 
+client = Client()
+
+
 class DiscordMethodsTest(unittest.TestCase):
 
     SAMPLE_SS_MSG_DATA = {
         "name": "The Cosmos",
         "message_content": "Python unittests test message content.",
         "avatar_url": "https://i.imgur.com/qgATqeF.png",
+    }
+
+    SAMPLE_WELCOME_BANNER_DATA = {
+        "banner_url": "https://cdn.discordapp.com/attachments/509502631849492525/548458089897000977/Banner.png",
+        "avatar_url": "https://cdn.discordapp.com/avatars/331793750273687553/dccee12134542a7ffab8e243ea8cce55.webp",
+        "name": "The Cosmos",
+        "text": "Welcome to the Universe."
     }
 
     @staticmethod
@@ -22,6 +32,12 @@ class DiscordMethodsTest(unittest.TestCase):
         return self.__run_async(self._get_msg_ss())
 
     async def _get_msg_ss(self):
-        client = Client()
         ss_bytes = await client.discord.ss_message(**self.SAMPLE_SS_MSG_DATA)
         self.assertIsInstance(ss_bytes, Union[bytes])
+
+    def test_get_welcome_banner(self):
+        return self.__run_async(self._get_welcome_banner())
+
+    async def _get_welcome_banner(self):
+        banner_bytes = await client.discord.get_welcome_banner(**self.SAMPLE_WELCOME_BANNER_DATA)
+        self.assertIsInstance(banner_bytes, Union[bytes])
