@@ -56,3 +56,36 @@ class DiscordMethods(object):
 
         data = await self.http.ss_discord_message(**kwargs)
         return data.read_data
+
+    async def get_welcome_banner(self, banner_url: str, avatar_url: str, name: str, text: str):
+        """Requests for welcome banner mostly used by discord servers to welcome newly joined members with custom text.
+
+        Note
+        ----
+        It supports most of the image formats including GIFs.
+
+        Parameters
+        ----------
+        banner_url: str
+            Direct URL of the banner file to be used as template. It can also be a GIF.
+        avatar_url: str
+            Direct URL of member's avatar to be pasted on banner.
+        name: str
+            Discord name of new member or anything.
+        text: str
+            Custom text to be written after name.
+
+        Returns
+        -------
+        bytes
+            Binary image bytes of banner. It can also be a GIF.
+
+        """
+        kwargs = {
+            "banner_url": banner_url,
+            "avatar_url": avatar_url,
+            "name": name,
+            "text": text
+        }
+        data = await self.http.fetch_welcome_banner(**kwargs)
+        return data.read_data
