@@ -6,9 +6,6 @@ from image_processor_client import Client
 import asyncio
 
 
-client = Client("http://0.0.0.0:5000/")
-
-
 class DiscordMethodsTest(unittest.TestCase):
 
     SAMPLE_SS_MSG_DATA = {
@@ -32,6 +29,7 @@ class DiscordMethodsTest(unittest.TestCase):
         return self.__run_async(self._get_msg_ss())
 
     async def _get_msg_ss(self):
+        client = Client("http://0.0.0.0:5000/")
         ss_bytes = await client.discord.ss_message(**self.SAMPLE_SS_MSG_DATA)
         self.assertIsInstance(ss_bytes, Union[bytes])
 
@@ -39,5 +37,6 @@ class DiscordMethodsTest(unittest.TestCase):
         return self.__run_async(self._get_welcome_banner())
 
     async def _get_welcome_banner(self):
+        client = Client("http://0.0.0.0:5000/")
         banner_bytes = await client.discord.get_welcome_banner(**self.SAMPLE_WELCOME_BANNER_DATA)
         self.assertIsInstance(banner_bytes, Union[bytes])
