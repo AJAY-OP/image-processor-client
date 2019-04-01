@@ -6,7 +6,7 @@ from image_processor_client import Client
 import asyncio
 
 
-client = Client()
+client = Client("http://0.0.0.0:5000/")
 
 
 class DiscordMethodsTest(unittest.TestCase):
