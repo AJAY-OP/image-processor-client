@@ -10,7 +10,7 @@ from .exceptions import InvalidFormat
 class HttpImageClient(ImageFunctions):
 
     def __init__(self, uri: str = None, loop=None):
-        self.session: aiohttp.ClientSession = None
+        self.session = None
         self.loop = loop or asyncio.get_event_loop()
         self.session = aiohttp.ClientSession(loop=self.loop)
         Route.BASE_URL = uri or Route.BASE_URL
