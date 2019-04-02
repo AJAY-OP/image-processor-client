@@ -3,7 +3,7 @@ from urllib.parse import quote
 
 class Route(object):
 
-    BASE_URL = "https://cosmos-image-processor.herokuapp.com/"
+    BASE_URL = "https://cosmos-image-processor.herokuapp.com"
 
     def __init__(self, path, method: str = "POST", **params):
         self.path = path
