@@ -1,3 +1,4 @@
+from .utils import ImageUtils
 from ._http import HttpImageClient
 from .image_methods import ImageMethods
 
@@ -21,11 +22,14 @@ class Client(ImageMethods):
         An instance of ``MemesMethods`` class providing all of the available methods for memes category.
     discord : image_processor_client.image_methods.DiscordMethods
         An instance of ``DiscordMethods`` class providing all of the available methods for discord category.
+    utils : image_processor_client.utils.ImageUtils
+        An instance of ``ImageUtils`` providing common utility methods for images.
 
     """
 
     def __init__(self, connection_uri: str = None, loop=None):
         self._http = HttpImageClient(uri=connection_uri, loop=loop)
+        self.utils = ImageUtils(self)
         super().__init__()
 
     @property
