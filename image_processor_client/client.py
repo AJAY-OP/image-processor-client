@@ -22,7 +22,7 @@ class Client(ImageMethods):
         An instance of ``MemesMethods`` class providing all of the available methods for memes category.
     discord : image_processor_client.image_methods.DiscordMethods
         An instance of ``DiscordMethods`` class providing all of the available methods for discord category.
-    utils : image_processor_client.utils.image.ImageUtils
+    utils : image_processor_client.utils.ImageUtils
         An instance of ``ImageUtils`` providing common utility methods for images.
 
     """

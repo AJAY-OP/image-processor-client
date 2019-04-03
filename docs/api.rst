@@ -19,3 +19,6 @@ Image Methods
 
 .. autoclass:: image_processor_client.image_methods.DiscordMethods()
     :members:
+
+..autoclass:: image_processor_client.utils.ImageUtils()
+    :members:
