@@ -19,4 +19,4 @@ class ImageUtils(object):
 
         """
         response = await self.__session.request("GET", url)
-        return response.headers.get("Content-Length")
+        return int(response.headers.get("Content-Length"), 0)
