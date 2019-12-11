@@ -57,7 +57,7 @@ class DiscordMethods(object):
         data = await self.http.ss_discord_message(**kwargs)
         return data.read_data
 
-    async def get_welcome_banner(self, banner_url: str, avatar_url: str, name: str, text: str):
+    async def get_welcome_banner(self, banner_url: str, avatar_url: str, name: str, text: str, **options):
         """Requests for welcome banner mostly used by discord servers to welcome newly joined members with custom text.
 
         Note
@@ -74,6 +74,8 @@ class DiscordMethods(object):
             Discord name of new member or anything.
         text: str
             Custom text to be written after name.
+        border_color: str, optional
+            Specify banner border color.
 
         Returns
         -------
@@ -87,5 +89,6 @@ class DiscordMethods(object):
             "name": name,
             "text": text
         }
+        kwargs.update(options)
         data = await self.http.fetch_welcome_banner(**kwargs)
         return data.read_data
