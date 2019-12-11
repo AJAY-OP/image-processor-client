@@ -76,6 +76,10 @@ class DiscordMethods(object):
             Custom text to be written after name.
         border_color: str, optional
             Specify banner border color.
+        font_color: str, optional
+            Specify font color for banner text.
+        avatar_border_color: str, optional
+            Specify border color for avatar.
 
         Returns
         -------
