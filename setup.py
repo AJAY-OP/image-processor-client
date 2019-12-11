@@ -32,7 +32,7 @@ setup(
     url="https://github.com/thec0sm0s/image-processor-client",
     author="□ | The Cosmos",
     description="Asynchronous python client for image-processor server (https://github.com/thec0sm0s/image-processor).",
-    long_description=open("README.md").read(),
+    # long_description=open("README.md").read(),
     packages=find_packages(),
     install_requires=requirements,
     extras_require=extra_requirements,
