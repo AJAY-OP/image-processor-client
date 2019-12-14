@@ -26,6 +26,8 @@ class HttpImageClient(ImageFunctions):
             data = HttpResponseData(response)
             if data.response.status == 400:
                 raise InvalidFormat
+            if data.response.status == 413:
+                raise OverflowError
             if read:
                 await data.read()
                 return data
