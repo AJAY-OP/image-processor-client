@@ -1,10 +1,11 @@
+from . import exceptions
+
 import asyncio
 import aiohttp
 
 from .route import Route
 from .functions import ImageFunctions
 from .response import HttpResponseData
-from .exceptions import InvalidFormat
 
 
 class HttpImageClient(ImageFunctions):
@@ -25,9 +26,11 @@ class HttpImageClient(ImageFunctions):
         async with self.session.request(method, url, **kwargs) as response:
             data = HttpResponseData(response)
             if data.response.status == 400:
-                raise InvalidFormat
+                raise exceptions.InvalidFormat
             if data.response.status == 413:
                 raise OverflowError
+            if data.response.status == 500:
+                raise exceptions.InternalServerError
             if read:
                 await data.read()
                 return data
