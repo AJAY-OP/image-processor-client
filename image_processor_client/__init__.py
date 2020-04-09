@@ -10,7 +10,8 @@ A python client for .. _Image Processor API  Server: https://github.com/thec0sm0
 """
 
 
-__version__ = "2.1.4"
+__version__ = "2.1.5"
 __author__ = "□ | The Cosmos"
 
 from .client import Client
+from ._http import exceptions
