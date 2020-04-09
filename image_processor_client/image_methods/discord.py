@@ -98,7 +98,7 @@ class DiscordMethods(object):
         return data.read_data
 
     REQUIRED_PROFILE_RANK_CARD_DATA = [
-        "name", "avatar_url", "discriminator", "rank",
+        "name", "avatar_url", "discriminator", "text_rank", "voice_rank",
         "text_xp", "text_target_xp", "text_total_xp", "text_level",
         "voice_xp", "voice_target_xp", "voice_total_xp", "voice_level",
     ]
@@ -114,8 +114,10 @@ class DiscordMethods(object):
             Discord discriminator of the member.
         avatar_url : str
             Direct link to member's avatar URL.
-        rank : int
-            Member's rank in the guild.
+        text_rank : int
+            Member's text rank in the guild.
+        voice_rank : int
+            Member's voice rank in the guild.
         text_xp : int
             Member's text xp.
         text_target_xp : int
