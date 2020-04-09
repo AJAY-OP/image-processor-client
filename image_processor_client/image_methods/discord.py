@@ -96,3 +96,56 @@ class DiscordMethods(object):
         kwargs.update(options)
         data = await self.http.fetch_welcome_banner(**kwargs)
         return data.read_data
+
+    REQUIRED_PROFILE_RANK_CARD_DATA = [
+        "name", "avatar_url", "discriminator", "rank",
+        "text_xp", "text_target_xp", "text_total_xp", "text_level",
+        "voice_xp", "voice_target_xp", "voice_total_xp", "voice_level",
+    ]
+
+    async def get_profile_rank_card(self, **kwargs):
+        """Requests to generate member's rank card bounded to every discord guild.
+
+        Parameters
+        ----------
+        name : str
+            Discord name of the member. Without discriminator.
+        discriminator : str
+            Discord discriminator of the member.
+        avatar_url : str
+            Direct link to member's avatar URL.
+        rank : int
+            Member's rank in the guild.
+        text_xp : int
+            Member's text xp.
+        text_target_xp : int
+            The xp needed for the next level.
+        text_total_xp : int
+            Total text xp of the member.
+        text_level : int
+            Text chat level of the member.
+        voice_xp : int
+            Member's voice xp.
+        voice_target_xp : int
+            The xp needed for next voice level.
+        voice_total_xp : int
+            Total voice xp of the member.
+        voice_level : int
+            Voice level of the member.
+
+        Returns
+        -------
+        bytes
+            Binary image bytes of generated rank card of the member.
+
+        Raises
+        ------
+        KeyError
+            Raise KeyError when any of the required data key is not present.
+
+        """
+        if not all(key in kwargs for key in self.REQUIRED_PROFILE_RANK_CARD_DATA):
+            raise KeyError
+
+        data = await self.http.fetch_profile_rank_card(**kwargs)
+        return data.read_data

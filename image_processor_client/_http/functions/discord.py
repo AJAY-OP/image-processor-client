@@ -14,3 +14,8 @@ class DiscordFunctions(ImageFunction, ABC):
         route = self.route("/discord/banners/welcome/")
         data = await self.request(route, json=kwargs)
         return data
+
+    async def fetch_profile_rank_card(self, **kwargs):
+        route = self.route("/discord/profile/rank/")
+        data = await self.request(route, json=kwargs)
+        return data
