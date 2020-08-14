@@ -18,6 +18,7 @@ class DiscordMethodsTest(unittest.TestCase):
         "banner_url": "https://cdn.discordapp.com/attachments/509502631849492525/548458089897000977/Banner.png",
         "avatar_url": "https://cdn.discordapp.com/avatars/331793750273687553/dccee12134542a7ffab8e243ea8cce55.webp",
         "name": "The Cosmos",
+        "discriminator": 7109,
         "text": "Welcome to the Universe."
     }
 
